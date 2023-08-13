@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/violet"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity"
+    android:padding="20dp"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:backgroundTint="#e9c46a"
+        android:textSize="16sp"
+        android:layout_marginTop="30dp"
+        android:text="Connect to Bluetooth Device"
+        android:textColor="#283618"/>
+
+    <ImageView
+        android:id="@+id/vv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:src="@drawable/wrong"
+        android:layout_marginTop="30dp"
+        android:backgroundTintMode="screen" />
+
+    <TextView
+        android:id="@+id/tvObject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        tools:text="OBJECT NOT DETECTED"
+        android:textStyle="bold"
+        android:textColor="#fca311"/>
+
+    <TextView
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:id="@+id/receivedDataTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Data Received"
+        android:textColor="#283618"
+        android:textSize="20sp" />
+
+
+</LinearLayout>
