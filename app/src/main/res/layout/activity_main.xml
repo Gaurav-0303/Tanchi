@@ -6,47 +6,46 @@
     android:layout_height="match_parent"
     android:background="@drawable/violet"
     android:gravity="center_horizontal"
-    tools:context=".MainActivity"
+    android:orientation="vertical"
     android:padding="20dp"
-    android:orientation="vertical">
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/connectButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:backgroundTint="#e9c46a"
-        android:textSize="16sp"
         android:layout_marginTop="30dp"
+        android:backgroundTint="#e9c46a"
+        android:padding="20dp"
         android:text="Connect to Bluetooth Device"
-        android:textColor="#283618"/>
+        android:textColor="#283618"
+        android:textSize="16sp" />
 
     <ImageView
         android:id="@+id/vv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:src="@drawable/wrong"
         android:layout_marginTop="30dp"
-        android:backgroundTintMode="screen" />
+        android:backgroundTintMode="screen"
+        tools:src="@drawable/wrong" />
 
     <TextView
         android:id="@+id/tvObject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        tools:text="OBJECT NOT DETECTED"
+        android:textColor="#fca311"
         android:textStyle="bold"
-        android:textColor="#fca311"/>
+        tools:text="OBJECT NOT DETECTED" />
 
     <TextView
-        android:layout_marginTop="70dp"
-        android:gravity="center"
         android:id="@+id/receivedDataTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Data Received"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
         android:textColor="#283618"
-        android:textSize="20sp" />
-
+        android:textSize="20sp"
+        tools:text="Data Received" />
 
 </LinearLayout>
