@@ -24,10 +24,10 @@
     <ImageView
         android:id="@+id/vv"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="180dp"
         android:layout_marginTop="30dp"
         android:backgroundTintMode="screen"
-        tools:src="@drawable/wrong" />
+        tools:src="@drawable/red_wrong" />
 
     <TextView
         android:id="@+id/tvObject"

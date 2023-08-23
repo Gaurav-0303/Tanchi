@@ -1,10 +1,10 @@
 package com.example.signuplogin
 
-import android.Manifest
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothSocket
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
@@ -19,6 +19,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+    private val REQUEST_ENABLE_BT = 0
     private lateinit var connectButton: Button
     private lateinit var bluetoothAdapter: BluetoothAdapter
     private lateinit var bluetoothDevice: BluetoothDevice
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var vv: ImageView
     private lateinit var tvObject: TextView
 
+    @SuppressLint("MissingPermission")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -34,10 +36,17 @@ class MainActivity : AppCompatActivity() {
         vv = findViewById<ImageView>(R.id.vv)
         tvObject = findViewById(R.id.tvObject)
 
+        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
+
+        if(bluetoothAdapter?.isEnabled == false){
+            val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
+            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT)
+        }
+
         connectButton.setOnClickListener {
             connectToBluetoothDevice()
         }
-        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
+
     }
 
     class IncomingDataHandler(private val textView: TextView, private val vv: ImageView, packageName: String, private val tvObject: TextView) : Handler() {
@@ -69,11 +78,11 @@ class MainActivity : AppCompatActivity() {
 
             textView.text = "$d\n$t\n$h\n"
             if(v == 1){
-                vv.setImageResource(R.drawable.correct)
+                vv.setImageResource(R.drawable.green_correct)
                 tvObject.text = "OBJECT DETECTED"
             }
             if(v == 0){
-                vv.setImageResource(R.drawable.wrong)
+                vv.setImageResource(R.drawable.red_wrong)
                 tvObject.text = "OBJECT NOT DETECTED"
             }
         }
