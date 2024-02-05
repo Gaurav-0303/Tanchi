@@ -10,6 +10,7 @@ Features:
 </br>
 3] Proactive Accident Prevention: By receiving timely updates on road conditions, users can take proactive measures to prevent accidents and ensure safer journeys.
 
+</br>
 How to Use:
 </br>
 </br>
